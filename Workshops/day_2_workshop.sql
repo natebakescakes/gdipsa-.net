@@ -177,10 +177,11 @@ SELECT
 
 -------------- Question 35 --------------
 
-SELECT O.CustomerID, C.CompanyName
+SELECT O.CustomerID, C.CompanyName, SUM(OD.UnitPrice * OD.Quantity) AS Amount
 FROM Customers C, Orders O, [Order Details] OD
 WHERE O.OrderID = OD.OrderID AND O.CustomerID = C.CustomerID
-AND	(OD.UnitPrice * OD.Quantity) >
+GROUP BY O.CustomerID, C.CompanyName
+HAVING SUM(OD.UnitPrice * OD.Quantity) >
 	(SELECT SUM(OD.UnitPrice * OD.Quantity) AS Amount
 	FROM Orders O, [Order Details] OD
 	WHERE O.OrderID = OD.OrderID) / 
