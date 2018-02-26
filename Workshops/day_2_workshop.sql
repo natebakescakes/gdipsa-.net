@@ -142,23 +142,27 @@ WHERE UnitPrice > (SELECT AVG(UnitPrice) FROM Products)
 
 -------------- Question 30 --------------
 
-SELECT OrderID, (UnitPrice * Quantity) AS Amount 
-FROM [Order Details]
-WHERE (UnitPrice * Quantity) > 10000
+SELECT O.OrderID, SUM(OD.UnitPrice * OD.Quantity) AS Amount 
+FROM Orders O, [Order Details] OD
+WHERE O.OrderID = OD.OrderID
+GROUP BY O.OrderID
+HAVING SUM(OD.UnitPrice * OD.Quantity) > 10000
 
 -------------- Question 31 --------------
 
 SELECT O.CustomerID, O.OrderID
 FROM Orders O, [Order Details] OD
 WHERE OD.OrderID = O.OrderID
-AND (OD.Quantity * OD.UnitPrice) > 10000
+GROUP BY O.CustomerID, O.OrderID
+HAVING SUM(OD.Quantity * OD.UnitPrice) > 10000
 
 -------------- Question 32 --------------
 
 SELECT C.CompanyName, O.CustomerID, O.OrderID
 FROM Customers C, Orders O, [Order Details] OD
 WHERE C.CustomerID = O.CustomerID AND O.OrderID = OD.OrderID
-AND (OD.Quantity * OD.UnitPrice) > 10000
+GROUP BY C.CompanyName, O.CustomerID, O.OrderID
+HAVING SUM(OD.Quantity * OD.UnitPrice) > 10000
 
 -------------- Question 33 --------------
 
@@ -170,9 +174,8 @@ GROUP BY O.CustomerID
 -------------- Question 34 --------------
 
 SELECT
-	(SELECT SUM(OD.UnitPrice * OD.Quantity) AS Amount
-	FROM Orders O, [Order Details] OD
-	WHERE O.OrderID = OD.OrderID) / 
+	(SELECT SUM(UnitPrice * Quantity) AS Amount
+	FROM [Order Details]) / 
 	(SELECT COUNT(DISTINCT CustomerID) FROM Orders) AS AverageBusiness
 
 -------------- Question 35 --------------
@@ -182,10 +185,9 @@ FROM Customers C, Orders O, [Order Details] OD
 WHERE O.OrderID = OD.OrderID AND O.CustomerID = C.CustomerID
 GROUP BY O.CustomerID, C.CompanyName
 HAVING SUM(OD.UnitPrice * OD.Quantity) >
-	(SELECT SUM(OD.UnitPrice * OD.Quantity) AS Amount
-	FROM Orders O, [Order Details] OD
-	WHERE O.OrderID = OD.OrderID) / 
-	(SELECT COUNT(DISTINCT CustomerID) FROM Orders)
+	((SELECT SUM(UnitPrice * Quantity) AS Amount
+	FROM [Order Details]) / 
+	(SELECT COUNT(DISTINCT CustomerID) FROM Orders))
 
 -------------- Question 36 --------------
 
