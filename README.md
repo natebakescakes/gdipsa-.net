@@ -7,5 +7,9 @@ This repository contains workshop solutions for each day of the .NET Programming
 
 ## Folder Structure
 
-- Lectures (Contains examples done during class)
-- Workshops (Contains SQL files for each workshop)
+- sqlp (SQL Programming Module)
+    - Lectures (Contains examples done during class)
+    - Workshops (Contains SQL files for each workshop)
+- uivsc (User Interface Development with Visual Studio in C#)
+    - Lectures
+    - Workshops
