@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lectures", "Lectures", "{90AA3E9D-2DE6-44CA-8AEB-16F80F07BBAA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workshops", "Workshops", "{90AA3E9D-2DE6-44CA-8AEB-16F80F07BBAA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1HandsOnSession", "Workshops\Day1HandsOnSession\Day1HandsOnSession.csproj", "{C2189B71-A99D-4294-AE3C-78A55E64BED5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day2HandsOnSession", "Workshops\Day2HandsOnSession\Day2HandsOnSession.csproj", "{70616C02-7EB4-4F3F-B722-6F0FCA8FD8A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +19,17 @@ Global
 		{C2189B71-A99D-4294-AE3C-78A55E64BED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2189B71-A99D-4294-AE3C-78A55E64BED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2189B71-A99D-4294-AE3C-78A55E64BED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70616C02-7EB4-4F3F-B722-6F0FCA8FD8A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70616C02-7EB4-4F3F-B722-6F0FCA8FD8A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70616C02-7EB4-4F3F-B722-6F0FCA8FD8A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70616C02-7EB4-4F3F-B722-6F0FCA8FD8A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C2189B71-A99D-4294-AE3C-78A55E64BED5} = {90AA3E9D-2DE6-44CA-8AEB-16F80F07BBAA}
+		{70616C02-7EB4-4F3F-B722-6F0FCA8FD8A9} = {90AA3E9D-2DE6-44CA-8AEB-16F80F07BBAA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {60FA871E-E989-4238-B967-1CCB6F66EB07}
