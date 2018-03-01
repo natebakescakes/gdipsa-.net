@@ -21,7 +21,9 @@ namespace Workshops.Day2HandsOnSession
             //Application.Run(new Example2_3());
             //Application.Run(new Example2_4());
             //Application.Run(new Example2_7());
-            Application.Run(new IceCreamParlour());
+            //Application.Run(new Example2_9());
+            //Application.Run(new IceCreamParlour());
+            Application.Run(new CustomerForm());
         }
     }
 }

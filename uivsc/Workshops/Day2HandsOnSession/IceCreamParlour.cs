@@ -45,12 +45,10 @@ namespace Workshops.Day2HandsOnSession
                 flavour = "Strawberry";
 
             //Toppings
-            if (this.optNuts.Checked)
-                toppings.Add("Nuts");
-            if (this.optRaisins.Checked)
-                toppings.Add("Raisins");
-            if (this.optChocolateTopping.Checked)
-                toppings.Add("Chocolate");
+            foreach (var item in this.toppingsListBox.SelectedItems)
+            {
+                toppings.Add(item as string);
+            }
 
             MessageBox.Show($"Your order is a {size} {flavour} Ice-cream!\n" +
                 (toppings.Count != 0 ? $"Toppings are {String.Join(", ", toppings)}." : "No Toppings."));
